@@ -1,18 +1,33 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1 class="APTest">Hello World {{ student }}</h1>
+    <ul class="myList">
+      <li v-for="animal in animals" :key="animal">{{animal}}</li>
+    </ul>
+    <button v-if="isLoggedIn === false">Login</button>
+    <button v-else>Logout</button>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+  },
+  data(){
+    return{
+    student:"Selina",
+    animals:["Pig","Cow","Rooster","Monkey"],
+    isLoggedIn: false,
   }
+  },
+  
 }
 </script>
+<style>
+.APTest{
+  color:red;
+}
+</style>
