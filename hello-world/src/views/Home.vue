@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <button @click="changeStudent">Change from Selina to Eva</button>
     <h1 class="APTest">Hello World {{ student }}</h1>
     <ul class="myList">
       <li v-for="animal in animals" :key="animal">{{animal}}</li>
@@ -23,8 +24,12 @@ export default {
     isLoggedIn: false,
   }
   },
-  
-}
+  methods:{
+    changeStudent: function(){
+      this.student = "Eva";
+    },
+  },
+};
 </script>
 <style>
 .APTest{
